@@ -15,7 +15,7 @@ public class ejcondi5 {
         num1 = sc.nextInt();
         num2 = sc.nextInt();
 
-        //Condicional
+        //Condicional: Comprobamos cual es mayor para ordenar los numeros; si son iguales lo mostramos
         if (num1 < num2) {
             System.out.printf(" %d  %d",num2,num1);
         }else if (num1 > num2) {
