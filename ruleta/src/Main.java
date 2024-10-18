@@ -1,109 +1,132 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
-class RouletteGame {
+public class Main {
     private int balance;
-    private Map<Integer, String> wheel;
-    private Map<Integer, String> colors;
-    private Map<Integer, String> evenOdd;
-    private Map<Integer, String> highLow;
     private Random random;
     private Scanner scanner;
 
-    public RouletteGame() {
+    public Main() {
         this.balance = 0;
-        this.wheel = new HashMap<>();
-        for (int i = 0; i <= 36; i++) {
-            wheel.put(i, String.valueOf(i));
-        }
-        this.colors = new HashMap<>();
-        for (int i = 0; i <= 36; i++) {
-            if (i == 0) {
-                colors.put(i, "green");
-            } else if (i % 2 == 0) {
-                colors.put(i, "red");
-            } else {
-                colors.put(i, "black");
-            }
-        }
-        this.evenOdd = new HashMap<>();
-        for (int i = 0; i <= 36; i++) {
-            if (i % 2 == 0) {
-                evenOdd.put(i, "even");
-            } else {
-                evenOdd.put(i, "odd");
-            }
-        }
-        this.highLow = new HashMap<>();
-        for (int i = 0; i <= 36; i++) {
-            if (i >= 19) {
-                highLow.put(i, "high");
-            } else {
-                highLow.put(i, "low");
-            }
-        }
         this.random = new Random();
         this.scanner = new Scanner(System.in);
     }
 
-    public String placeBet(String betType, int amount) {
-        if (amount != 20 && amount != 40 && amount != 100 && amount != 200 && amount != 500) {
-            return "Invalid bet amount. Please choose 20, 40, 100, 200, or 500.";
+    public void jugar() {
+        System.out.println("Bienvenido a la ruleta de casino!");
+        System.out.println("Tu balance actual es: " + balance);
+
+        while (true) {
+            System.out.println("¿Qué deseas hacer?");
+            System.out.println("1. Realizar una apuesta");
+            System.out.println("2. Ver balance");
+            System.out.println("3. Salir");
+
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    realizarApuesta();
+                    break;
+                case 2:
+                    verBalance();
+                    break;
+                case 3:
+                    System.out.println("Gracias por jugar!");
+                    return;
+                default:
+                    System.out.println("Opción inválida. Por favor, inténtalo de nuevo.");
+            }
         }
-        if (!betType.equals("single_number") && !betType.equals("red") && !betType.equals("black") && !betType.equals("even") && !betType.equals("odd") && !betType.equals("high") && !betType.equals("low")) {
-            return "Invalid bet type. Please choose single_number, red, black, even, odd, high, or low.";
+    }
+
+    private void realizarApuesta() {
+        System.out.println("¿Cuánto deseas apostar?");
+        int apuesta = scanner.nextInt();
+
+        if (apuesta <= 0) {
+            System.out.println("La apuesta debe ser mayor que 0.");
+            return;
         }
 
-        int winningNumber = random.nextInt(37);
-        if (betType.equals("single_number")) {
-            System.out.print("Enter a number (0-36): ");
-            int userNumber = scanner.nextInt();
-            if (userNumber == winningNumber) {
-                balance += amount * 35;
-                return "You win! Your winnings are " + amount * 35 + ". New balance: " + balance;
-            } else {
-                balance -= amount;
-                return "You lose. New balance: " + balance;
-            }
-        } else if (betType.equals("red")) {
-            if (colors.get(winningNumber).equals("red")) {
-                balance += amount;
-                return "You win! Your winnings are " + amount + ". New balance: " + balance;
-            } else {
-                balance -= amount;
-                return "You lose. New balance: " + balance;
-            }
-        } else if (betType.equals("black")) {
-            if (colors.get(winningNumber).equals("black")) {
-                balance += amount;
-                return "You win! Your winnings are " + amount + ". New balance: " + balance;
-            } else {
-                balance -= amount;
-                return "You lose. New balance: " + balance;
-            }
-        } else if (betType.equals("even")) {
-            if (evenOdd.get(winningNumber).equals("even")) {
-                balance += amount;
-                return "You win! Your winnings are " + amount + ". New balance: " + balance;
-            } else {
-                balance -= amount;
-                return "You lose. New balance: " + balance;
-            }
-        } else if (betType.equals("odd")) {
-            if (evenOdd.get(winningNumber).equals("odd")) {
-                balance += amount;
-                return "You win! Your winnings are " + amount + ". New balance: " + balance;
-            } else {
-                balance -= amount;
-                return "You lose. New balance: " + balance;
-            }
-        } else if (betType.equals("high")) {
-            if (highLow.get(winningNumber).equals("high")) {
-                balance += amount;
-                return "You win! Your winnings are " + amount + ". New balance: " + balance;
-            } else {
-                balance -= amount;
-                return "You lose. New balance: " + balance;
-            }
+        System.out.println("¿Qué tipo de apuesta deseas realizar?");
+        System.out.println("1. Rojo");
+        System.out.println("2. Negro");
+        System.out.println("3. Par");
+        System.out.println("4. Impar");
+        System.out.println("5. Alto");
+        System.out.println("6. Bajo");
+
+        int tipoApuesta = scanner.nextInt();
+
+        int resultado = random.nextInt(37);
+
+        switch (tipoApuesta) {
+            case 1:
+                if (resultado % 2 == 0 && resultado != 0) {
+                    balance += apuesta;
+                    System.out.println("Ganaste! Tu nuevo balance es: " + balance);
+                } else {
+                    balance -= apuesta;
+                    System.out.println("Perdiste. Tu nuevo balance es: " + balance);
+                }
+                break;
+            case 2:
+                if (resultado % 2 != 0 && resultado != 0) {
+                    balance += apuesta;
+                    System.out.println("Ganaste! Tu nuevo balance es: " + balance);
+                } else {
+                    balance -= apuesta;
+                    System.out.println("Perdiste. Tu nuevo balance es: " + balance);
+                }
+                break;
+            case 3:
+                if (resultado % 2 == 0) {
+                    balance += apuesta;
+                    System.out.println("Ganaste! Tu nuevo balance es: " + balance);
+                } else {
+                    balance -= apuesta;
+                    System.out.println("Perdiste. Tu nuevo balance es: " + balance);
+                }
+                break;
+            case 4:
+                if (resultado % 2 != 0) {
+                    balance += apuesta;
+                    System.out.println("Ganaste! Tu nuevo balance es: " + balance);
+                } else {
+                    balance -= apuesta;
+                    System.out.println("Perdiste. Tu nuevo balance es: " + balance);
+                }
+                break;
+            case 5:
+                if (resultado >= 19) {
+                    balance += apuesta;
+                    System.out.println("Ganaste! Tu nuevo balance es: " + balance);
+                } else {
+                    balance -= apuesta;
+                    System.out.println("Perdiste. Tu nuevo balance es: " + balance);
+                }
+                break;
+            case 6:
+                if (resultado < 19) {
+                    balance += apuesta;
+                    System.out.println("Ganaste! Tu nuevo balance es: " + balance);
+                } else {
+                    balance -= apuesta;
+                    System.out.println("Perdiste. Tu nuevo balance es: " + balance);
+                }
+                break;
+            default:
+                System.out.println("Opción inválida. Por favor, inténtalo de nuevo.");
+        }
+    }
+
+    private void verBalance() {
+        System.out.println("Tu balance actual es: " + balance);
+    }
+
+    public static void main(String[] args) {
+        Main ruleta = new Main();
+        ruleta.jugar();
+    }
+}
