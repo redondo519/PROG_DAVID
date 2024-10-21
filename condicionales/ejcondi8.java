@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class ejcondi8 {
     public static void main(String[] args) {
+
+    //SWITCH CASE
         //Delaración de variable entera para recoger nota
         int nota;
 
