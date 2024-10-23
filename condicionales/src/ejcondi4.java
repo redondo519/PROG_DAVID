@@ -16,7 +16,7 @@ public class ejcondi4 {
 
 
         //Condicional: Comprobamos si el numero se encuentra entre -1 y 1; sin ser 0
-        if ( ((num > 0 && num < 1) || (num < 0 && num > -1)) && (num!=0) ) {
+        if ( ((num > 0 && num < 1) || (num < 0 && num > -1)) && (num!=0) ) {    //num > -1 && num <1 && num != 0 >>> ES CASI 0
             System.out.println("El numero es casi 0  ");
         }else{
             System.out.println("El numero no es un 'casi 0'");
