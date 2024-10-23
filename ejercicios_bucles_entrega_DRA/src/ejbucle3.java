@@ -17,7 +17,7 @@ public class ejbucle3 {
 
         if (n!=0) {
             if (n > 18) {
-                //leer enunciado
+                //leer enunciado para saber
             }
         }else{
             System.out.println("ERROR");
