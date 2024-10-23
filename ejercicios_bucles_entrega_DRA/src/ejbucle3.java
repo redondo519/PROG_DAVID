@@ -5,10 +5,11 @@ public class ejbucle3 {
 
         //Variables
         Scanner sc = new Scanner(System.in);
-        int n,total,mayores;
+        int n,total;
         int suma=0;
+        int mayores = 0;
 
-
+        //agregar bucle
         System.out.println("Ingrese la edad del alumno:");
         n = sc.nextInt();
         suma = suma + n;
@@ -17,15 +18,11 @@ public class ejbucle3 {
 
         if (n!=0) {
             if (n > 18) {
-                //leer enunciado para saber
+                mayores++;
             }
         }else{
             System.out.println("ERROR");
         }
-
-
-
-
 
     }
 }
