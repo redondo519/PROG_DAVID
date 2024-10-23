@@ -19,12 +19,17 @@ public class ejbucle1 {
             System.out.println("Ingrese la edad del primer alumno o Ingrese   -1  para salir: ");
             edad = sc.nextInt();
 
-            //Calculo edad máxima
-            if (edad > max) {
-                max = edad;
-            }else if (edad < min && edad >-1) {
-                min = edad;
+            //No edad negativa
+            if (edad >0) {
+                //Calculo edad máxima
+                if (edad > max) {
+                    max = edad;
+                }
+                if (edad < min && edad > -1) {
+                    min = edad;
+                }
             }
+
 
         }while (edad != -1); //Cierre de while
         System.out.println("La edad maxima de los alumnos es : " + max);
