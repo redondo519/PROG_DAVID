@@ -6,12 +6,24 @@ public class ej46_bucles_columnas {
         //Declaracion de variables
         Scanner entrada = new Scanner(System.in);
         int n;
-        int cuad;
+        int cuad,cubo;
 
         //Solicitamos numero para calculos en columnas
         System.out.println("Introduce un numero: ");
         n = entrada.nextInt();
-        cuad = n*n;
-        System.out.println("%d %d elevado a 2 = " , n ,cuad);
+
+        for (int i = n+1; i < n+6; i++) {
+            cuad = i*i;
+            cubo = i*i*i;
+            System.out.println("numero calculado: "+i+ "    ");
+            System.out.print("cuad: ");
+            System.out.println(cuad);
+            System.out.print("cubo: ");
+            System.out.println(cubo);
+
+        }
+
+
+
     }
 }
