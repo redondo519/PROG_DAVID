@@ -15,7 +15,7 @@ public class ej40bucles {
 
 
 
-        if ((h<0) || (h>24)) {
+        if ((h<0) || (h>24)) { //comprobacio, se puede hacer con un do para que si la hora es incorrecta siga pidiendo
             System.out.println("HORA MAL INTRODUCIDA");
         }else {
 
