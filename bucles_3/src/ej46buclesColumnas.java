@@ -12,6 +12,7 @@ public class ej46buclesColumnas {
         System.out.println("Introduce un numero: ");
         n = entrada.nextInt();
 
+        //bucle para hayar los siguentes 5 numeros enteros
         for (int i = n + 1; i < n + 6; i++) {
             cuad = i * i;
             cubo = i * i * i;
