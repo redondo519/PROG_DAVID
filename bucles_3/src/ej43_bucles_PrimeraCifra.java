@@ -7,9 +7,14 @@ public class ej43_bucles_PrimeraCifra {
         int n;
         Scanner sc = new Scanner(System.in);
 
-        //Solicitar numero n(int)
-        System.out.println("Introduce un numero: ");
-        n = sc.nextInt();
+
+
+
+        //comprobacion, numero menor de 6 cifras
+        do{
+            System.out.println("Introduce un numero: ");
+            n = sc.nextInt();
+        }while(n < 0 || n > 9999999);
 
         while(n > 10){
 
