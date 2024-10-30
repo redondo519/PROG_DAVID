@@ -19,7 +19,7 @@ public class ej39bucles {
 
             //condicion, muestra solo los numeros impares
             if (i % 2 != 0) {
-                System.out.println("Numeros impares comprendidos");
+
                 System.out.println(i);
             }
 
