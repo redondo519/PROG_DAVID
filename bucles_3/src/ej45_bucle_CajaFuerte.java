@@ -16,14 +16,12 @@ public class ej45_bucle_CajaFuerte {
             int n = sc.nextInt();
 
             if(n==p){
-                System.out.println("Contraseña correcta");
-                i = 4;
+                System.out.println("Caja fuerte abierta satisfactoriamente");
+                i = 4; //Salir del bucle
             }else{
-                System.out.println("CONTRASEÑA INCORRECTA");
+                System.out.println("Lo siento, esa no es la convinacion");
             }
-
         }
-
 
     }
 }
