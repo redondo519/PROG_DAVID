@@ -49,9 +49,6 @@ public class ej52buclesCalculos {
         }while(num >=0);
 
         System.out.printf("Se han introducido un total de %d numeros positivos: \n ",i);
-        System.out.printf("Se han introducido un total de %f numeros IMPARES: \n ",j);
-
-        System.out.println("suma impares: "+suma);
         System.out.println("La media de los numeros impares es: " + media);
         System.out.println("El mayor introducido  de los numeros pares es: " + mayor);
 
