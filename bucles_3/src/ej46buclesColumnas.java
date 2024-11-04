@@ -16,9 +16,8 @@ public class ej46buclesColumnas {
         for (int i = n + 1; i < n + 6; i++) {
             cuad = i * i;
             cubo = i * i * i;
-            System.out.print("numero introducido: " + n + "    \t");
-            System.out.printf("cuadrado de %d :  %d \t",i,cuad);
-            System.out.printf("cubo de %d :  %d \t ",i,cubo);
+
+            System.out.printf("numero introducido %d \t cuadrado: %d  \t   cubo:  %d \t",i,cuad,cubo);
             System.out.println();
 
         }
