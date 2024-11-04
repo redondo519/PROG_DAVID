@@ -17,7 +17,7 @@ public class ej49buclesSumanum {
         }while(num <0);
 
         //Bucle para sumar siguientes 100 numeros a num
-        for (i=num+1;i<=num+101;i++){
+        for (i=num+1;i<num+101;i++){
             suma = suma + i;
         }
         System.out.printf("La suma de los 100 siguientes numeros a %d es : %d",num,suma);

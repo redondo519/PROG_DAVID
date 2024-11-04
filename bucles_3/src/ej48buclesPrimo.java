@@ -11,6 +11,7 @@ public class ej48buclesPrimo {
 
 
         //Bucle comprobacion num es positivo
+        //NO es necesario, ya que para un numero negativo primo = false
         do{
             //Solicitamos numero num(int)
             System.out.println("Ingrese un numero");
