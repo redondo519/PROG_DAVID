@@ -26,6 +26,8 @@ public class ej47buclesPotencias {
 
         }else{
 
+            //El enunciado pide que el exponente no sea negativo, entonces no seria necesario
+            //Es necesario tambien agregar el resultado
             for (int i = entero; i <= 1; i++) {
 
                 System.out.println(real + "^" + entero);

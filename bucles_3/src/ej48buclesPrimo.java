@@ -22,6 +22,9 @@ public class ej48buclesPrimo {
         for (i = 2; i < num; i++) {
             if (num % i == 0) {
                 primo = false;
+                //para salir del bucle antes
+                //break
+                i = num;
             }
         }
         if (primo) { //Para primo false: no se encontraron más divisores
