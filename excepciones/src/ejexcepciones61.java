@@ -15,7 +15,7 @@ public class ejexcepciones61  {
         try{
             num = Integer.parseInt(a);
             System.out.println(num);
-        }catch(Exception e){
+        }catch(NumberFormatException e){
             System.out.println("Error: numero invalido");
         }
 
