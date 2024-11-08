@@ -10,7 +10,14 @@ public class ejexcepciones61  {
         //Solicitamos cadena de caracteres
         System.out.println("Introduce una cadena de caracteres");
         a = entrada.nextLine();
-        num = Integer.parseInt(a);
+
+        //Comprobacion de excepcion
+        try{
+            num = Integer.parseInt(a);
+            System.out.println(num);
+        }catch(Exception e){
+            System.out.println("Error: numero invalido");
+        }
 
     }
 
