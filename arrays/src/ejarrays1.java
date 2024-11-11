@@ -9,7 +9,7 @@ public class ejarrays1 {
         }
 
         for (int i = 0; i < numero.length; i++) {
-            System.out.print(numero[i] + " : ");
+            System.out.print(numero[i] + " :: ");
         }
 
     }
